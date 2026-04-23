@@ -1,0 +1,343 @@
+/* Estilos minimalistas para la lista de solicitudes */
+
+.lista-container {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.lista-header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 2rem 1.5rem;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+}
+
+.lista-header-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.lista-header h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.lista-descripcion {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  opacity: 0.95;
+  font-size: 1rem;
+}
+
+/* Estados de carga y error */
+.loading-container,
+.error-container {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.loading-container p,
+.error-container p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 1.05rem;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border: 4px solid #e2e8f0;
+  border-top-color: #48bb78;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.error-message {
+  color: #e53e3e;
+  margin-bottom: 1.5rem;
+}
+
+.retry-button-lista {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+.retry-button-lista:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.retry-button-lista:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.3), 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+/* Estado vacío */
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #718096;
+}
+
+.empty-icon {
+  margin: 0 auto 1rem;
+  color: #cbd5e0;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.empty-state p:first-of-type {
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.empty-hint {
+  font-size: 0.95rem;
+  color: #a0aec0;
+}
+
+/* Lista de solicitudes */
+.solicitudes-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.solicitud-item {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+}
+
+.solicitud-item:last-child {
+  border-bottom: none;
+}
+
+.solicitud-item:hover {
+  background-color: #f7fafc;
+}
+
+.solicitud-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.solicitud-titulo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.solicitud-prioridad {
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.prioridad-muy-baja {
+  background-color: #e6fffa;
+  color: #047857;
+}
+
+.prioridad-baja {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.prioridad-media {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.prioridad-alta {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.prioridad-muy-alta {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.solicitud-descripcion {
+  margin: 0 0 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.975rem;
+}
+
+.solicitud-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.solicitud-metadata > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.solicitud-metadata svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.solicitud-categoria {
+  font-weight: 600;
+  color: #48bb78;
+}
+
+.solicitud-email {
+  color: #667eea;
+}
+
+.solicitud-fecha {
+  color: #718096;
+}
+
+/* Animación de spin */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lista-container {
+    margin: 0 1rem 2rem;
+    border-radius: 8px;
+  }
+
+  .lista-header {
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+
+  .lista-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .solicitud-item {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .solicitud-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .solicitud-prioridad {
+    align-self: flex-start;
+  }
+
+  .solicitud-metadata {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .empty-state {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solicitud-titulo {
+    font-size: 1.125rem;
+  }
+
+  .solicitud-metadata {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner,
+  .solicitud-item,
+  .retry-button-lista {
+    transition: none;
+    animation: none;
+  }
+
+  .retry-button-lista:hover {
+    transform: none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: none;
+    }
+  }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  .solicitud-item {
+    border-bottom-width: 2px;
+  }
+
+  .solicitud-prioridad {
+    border: 2px solid currentColor;
+  }
+
+  .retry-button-lista {
+    border: 2px solid white;
+  }
+}
+
+/* Mejora para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
